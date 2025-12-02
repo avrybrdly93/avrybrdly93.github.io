@@ -1,168 +1,1233 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Avery Bradley | Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/img/favicon.png"
-    />
-  </head>
-  <body>
-    <div class="whiteheader">
-      <div class="centeredheader">
-        <a href="index.html" class="uniqueLink">
-          <div class="headerbox">
-            <h1>Avery Bradley</h1>
-          </div>
-        </a>
-        <nav>
-          <a href="about.html">About</a>
-          <a href="index.html">Portfolio</a>
-          <a href="resume.html">Resume</a>
-        </nav>
-      </div>
-    </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Christopher Avery Bradley | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Christopher Avery Bradley – Applied Mathematics, Scientific Computing, and Machine Learning."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #f5f6fa;
+      --bg-alt: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border-subtle: #e5e7eb;
+      --shadow-soft: 0 20px 35px rgba(15, 23, 42, 0.08);
+      --radius-lg: 18px;
+      --radius-full: 999px;
+      --max-width: 1080px;
+    }
 
-    <div class="centeredcontent">
-      <section>
-        <header>
-          <h2 id="contactheader">Portfolio</h2>
-          <span class="contact-links">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e5f0ff, #f9fafb 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(249, 250, 251, 0.92),
+        rgba(249, 250, 251, 0.7),
+        rgba(249, 250, 251, 0)
+      );
+      border-bottom: 1px solid rgba(229, 231, 235, 0.6);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 20%, #93c5fd, #1d4ed8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eff6ff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.35);
+    }
+
+    .nav-title {
+      font-family: "Merriweather", serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a {
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      color: var(--text-muted);
+      transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .nav-links a.nav-cta {
+      background: var(--accent);
+      color: #f9fafb;
+      font-weight: 600;
+      box-shadow: 0 12px 22px rgba(37, 99, 235, 0.4);
+      padding-inline: 0.9rem;
+    }
+
+    .nav-links a.nav-cta:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding: 2.75rem 0 2.5rem;
+    }
+
+    .hero-left h1 {
+      font-family: "Merriweather", serif;
+      font-size: clamp(2.2rem, 3.1vw, 2.9rem);
+      line-height: 1.1;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg, #1d4ed8, #7c3aed);
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .hero-tagline {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      max-width: 36rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.6rem;
+      font-size: 0.9rem;
+    }
+
+    .pill {
+      border-radius: var(--radius-full);
+      padding: 0.25rem 0.7rem;
+      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: #374151;
+    }
+
+    .pill-accent {
+      border-color: rgba(37, 99, 235, 0.15);
+      background: rgba(219, 234, 254, 0.7);
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.2);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease,
+        box-shadow 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #f9fafb;
+      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.45);
+      border-color: rgba(37, 99, 235, 0.9);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      background: #e5edff;
+      border-color: #bfdbfe;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      border-color: transparent;
+      padding-inline: 0;
+    }
+
+    .btn-ghost:hover {
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-note strong {
+      color: #111827;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.98),
+        rgba(241, 245, 249, 0.95)
+      );
+      border-radius: 24px;
+      padding: 1.3rem 1.3rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .hero-card-badge {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      font-weight: 500;
+    }
+
+    .hero-card-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-card-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+      font-size: 0.78rem;
+    }
+
+    .metric {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 0.55rem 0.5rem;
+      border: 1px solid rgba(229, 231, 235, 0.9);
+    }
+
+    .metric-label {
+      font-size: 0.7rem;
+      color: #6b7280;
+      margin-bottom: 0.1rem;
+    }
+
+    .metric-value {
+      font-weight: 600;
+    }
+
+    .hero-card-projects {
+      margin-top: 0.15rem;
+    }
+
+    .hero-card-projects p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+    }
+
+    .hero-tag {
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4f46e5;
+      border: 1px solid #e0e7ff;
+    }
+
+    .hero-tag-soft {
+      background: #ecfeff;
+      color: #0891b2;
+      border-color: #cffafe;
+    }
+
+    .hero-floating {
+      position: absolute;
+      right: -8px;
+      top: -16px;
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 150deg,
+        #2563eb,
+        #4f46e5,
+        #0ea5e9,
+        #2563eb
+      );
+      opacity: 0.2;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .hero-footnote {
+      margin-top: 0.4rem;
+      font-size: 0.72rem;
+      color: #9ca3af;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-heading h2 {
+      font-family: "Merriweather", serif;
+      font-size: 1.4rem;
+    }
+
+    .section-heading p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1.1fr);
+      gap: 1rem;
+    }
+
+    .project-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.3rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .project-card.featured {
+      border: 1px solid #bfdbfe;
+      box-shadow: 0 24px 50px rgba(37, 99, 235, 0.18);
+      background: linear-gradient(
+        150deg,
+        rgba(239, 246, 255, 0.98),
+        rgba(255, 255, 255, 0.98)
+      );
+    }
+
+    .project-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .project-year {
+      font-size: 0.8rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: var(--radius-full);
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #dbeafe;
+      font-weight: 500;
+    }
+
+    .project-status {
+      font-size: 0.78rem;
+      color: #6b7280;
+    }
+
+    .project-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .project-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .project-body {
+      font-size: 0.86rem;
+      color: #4b5563;
+      margin-bottom: 0.45rem;
+    }
+
+    .project-list {
+      font-size: 0.84rem;
+      color: #4b5563;
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-list li {
+      margin-bottom: 0.15rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.35rem;
+      font-size: 0.76rem;
+    }
+
+    .project-tag {
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      color: #4b5563;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.2rem;
+      font-size: 0.8rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: #111827;
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .project-link.secondary {
+      background: #e5e7eb;
+      color: #111827;
+      font-weight: 400;
+    }
+
+    .project-link:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    .about-text {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.5rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 35px rgba(15, 23, 42, 0.04);
+      font-size: 0.92rem;
+      color: #374151;
+    }
+
+    .about-text p + p {
+      margin-top: 0.6rem;
+    }
+
+    .about-highlight {
+      background: #fef9c3;
+      padding: 0.3rem 0.5rem;
+      border-radius: 10px;
+    }
+
+    .timeline {
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.4rem;
+      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .timeline-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline-marker {
+      margin-top: 0.25rem;
+    }
+
+    .timeline-marker::before {
+      content: "";
+      display: block;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #2563eb;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+    }
+
+    .timeline-body-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .timeline-body-sub {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-body-desc {
+      font-size: 0.8rem;
+      color: #4b5563;
+    }
+
+    .contact-card {
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.5rem;
+      border: 1px solid var(--border-subtle);
+      background: #111827;
+      color: #e5e7eb;
+      display: grid;
+      grid-template-columns: minmax(0, 2.3fr) minmax(0, 1.4fr);
+      gap: 1.25rem;
+      align-items: center;
+      box-shadow: 0 25px 45px rgba(15, 23, 42, 0.7);
+    }
+
+    .contact-card h2 {
+      font-family: "Merriweather", serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      max-width: 32rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-link-label {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #9ca3af;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.4rem 0.25rem;
+      border-radius: 999px;
+      background: rgba(31, 41, 55, 0.75);
+    }
+
+    .contact-link span {
+      color: #e5e7eb;
+    }
+
+    .contact-link:hover {
+      background: rgba(55, 65, 81, 0.9);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(209, 213, 219, 0.7);
+      font-size: 0.8rem;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+      .hero {
+        padding-top: 1.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-wrap {
+        padding-inline: 1rem;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .contact-card {
+        padding: 1.1rem 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="nav-logo">CB</div>
+        <div>
+          <div class="nav-title">Christopher Avery Bradley</div>
+          <div class="nav-subtitle">
+            Applied Mathematics · Scientific Computing · ML
+          </div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a
+          href="https://github.com/avrybrdly93"
+          target="_blank"
+          rel="noopener noreferrer"
+        >GitHub</a>
+        <a
+          class="nav-cta"
+          href="Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Download CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-wrap">
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <h1>
+          Building simulations at the intersection of
+          <span class="hero-highlight">physics, PDEs, and machine learning.</span>
+        </h1>
+        <p class="hero-tagline">
+          I’m an applied mathematician and scientific computing researcher focused
+          on physics-based modelling, numerical methods, and emerging
+          scientific machine learning techniques.
+        </p>
+
+        <div class="hero-meta">
+          <div class="pill pill-accent">
+            <span class="pill-dot"></span>
+            Currently based in Vietnam · US citizen
+          </div>
+          <div class="pill">
+            Research interests: PDEs, scientific ML, computational physics
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            View portfolio
+          </a>
+          <a
+            href="https://github.com/avrybrdly93"
+            class="btn btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub profile
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            Contact & CV →
+          </a>
+        </div>
+
+        <p class="hero-note">
+          <strong>Current focus:</strong> physics-informed neural networks for
+          the 2D wave equation, and high-fidelity modelling of golf ball
+          aerodynamics (dimpled vs smooth surfaces).
+        </p>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div>
+              <div class="hero-card-title">Portfolio at a glance</div>
+              <div class="hero-card-subtitle">
+                Scientific computing · ML · education
+              </div>
+            </div>
+            <div class="hero-card-badge">2024–2025</div>
+          </div>
+
+          <div class="hero-card-metrics">
+            <div class="metric">
+              <div class="metric-label">Flagship projects</div>
+              <div class="metric-value">2</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">In-progress</div>
+              <div class="metric-value">2</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Focus</div>
+              <div class="metric-value">SciML / PDEs</div>
+            </div>
+          </div>
+
+          <div class="hero-card-projects">
+            <p>
+              Representative work includes a fully validated
+              <strong>golf ball flight simulator</strong> and a
+              <strong>PINN-based 2D wave solver</strong> with interactive web
+              visualizations.
+            </p>
+            <div class="hero-project-tags">
+              <span class="hero-tag">Finite differences</span>
+              <span class="hero-tag">Scientific ML</span>
+              <span class="hero-tag hero-tag-soft">FastAPI · JS · Plotly</span>
+              <span class="hero-tag hero-tag-soft">Python</span>
+            </div>
+          </div>
+
+          <div class="hero-footnote">
+            Designed for graduate study in mathematical modelling, scientific
+            computing, and ML.
+          </div>
+        </div>
+        <div class="hero-floating"></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-heading">
+        <h2>Selected Projects</h2>
+        <p>
+          A snapshot of the work I’m most proud of—combining theory, code, and
+          visualization to understand complex physical systems.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card featured">
+          <div class="project-label-row">
+            <span class="project-year">2025 · In preparation</span>
+            <span class="project-status">Flagship ML / PDE project</span>
+          </div>
+          <h3 class="project-title">Physics-Informed Neural Networks for the 2D Wave Equation</h3>
+          <p class="project-subtitle">
+            Learning wave dynamics directly from the governing PDE using PINNs,
+            with a classical solver for validation and an interactive 3D web demo.
+          </p>
+          <p class="project-body">
+            This project couples a finite-difference 2D wave equation solver with a
+            physics-informed neural network that learns the underlying dynamics
+            from data and physical constraints. An interactive Plotly-based
+            visualization and FastAPI backend allow real-time exploration of
+            initial conditions, boundary conditions, and model performance.
+          </p>
+          <ul class="project-list">
+            <li>Implements a stable 2D FD solver satisfying CFL constraints as the reference model.</li>
+            <li>Trains a PINN to minimize PDE residuals and boundary/initial condition errors.</li>
+            <li>Provides a web-based interface for visual comparison: ground truth vs PINN predictions.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">PyTorch</span>
+            <span class="project-tag">Finite differences</span>
+            <span class="project-tag">Physics-informed neural nets</span>
+            <span class="project-tag">FastAPI</span>
+            <span class="project-tag">Plotly · JS</span>
+          </div>
+          <div class="project-links">
             <a
-              href="http://www.linkedin.com/in/avery-bradley-web-developer"
+              href="https://github.com/avrybrdly93/wave-pinn-solver"
               target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
             >
-              <img
-                class="contact-img"
-                src="assets/img/linkedIn.png"
-                alt="Linked In"
-              />
+              View on GitHub →
             </a>
-            <a href="https://github.com/avrybrdly93" target="_blank">
-              <img
-                class="contact-img"
-                src="assets/img/github.png"
-                alt="Github"
-              />
+            <a
+              href="https://avrybrdly93.github.io/wave-pinn-solver/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link secondary"
+            >
+              Live demo (GitHub Pages / Render)
             </a>
-            <a href="mailto:averybradley93@gmail.com" target="_blank">
-              <img class="contact-img" src="assets/img/gmail.png" alt="Gmail" />
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label-row">
+            <span class="project-year">2024–2025</span>
+            <span class="project-status">Research project · Published</span>
+          </div>
+          <h3 class="project-title">Ball in Flight: The Aerodynamic Effects of Dimples on a Golf Ball</h3>
+          <p class="project-subtitle">
+            High-fidelity simulation of dimpled vs smooth golf balls, including
+            aerodynamic coefficient fitting, validation, and trajectory analysis.
+          </p>
+          <p class="project-body">
+            This independent research project models golf ball flight using
+            spin-dependent lift and drag, turbulent transition effects, and
+            literature-based CL/CD fits. The simulator is validated against indoor
+            launch monitor data and existing experimental studies, and is
+            accompanied by a full paper and reproducible figures.
+          </p>
+          <ul class="project-list">
+            <li>Implements 3D ball flight with drag, lift, and spin decay.</li>
+            <li>Calibrates aerodynamic coefficients using experimental data and literature.</li>
+            <li>Compares dimpled vs smooth balls in terms of carry, peak height, and energy loss.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Numerical ODE integration</span>
+            <span class="project-tag">Aerodynamics</span>
+            <span class="project-tag">Data fitting</span>
+            <span class="project-tag">Matplotlib</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/avrybrdly93/golfsim"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              View on GitHub →
             </a>
-          </span>
-          <hr />
-        </header>
-        <div class="left gallerydiv">
-          <a
-            class="picturelink"
-            href="https://sublme-music.herokuapp.com"
-            target="_blank"
-          >
-            <img class="galleryimg" src="assets/img/Mixtape.jpg" />
-            <div class="project-title">
-              <h6>Sublme</h6>
-              <a
-                class="source-code"
-                href="https://github.com/avrybrdly93/sublme"
-                target="_blank"
-                ><em>Source Code</em></a
-              >
-            </div>
-          </a>
+            <a
+              href="https://zenodo.org/records/17499904"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link secondary"
+            >
+              Read the paper (Zenodo)
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-grid" style="margin-top: 1.25rem;">
+        <article class="project-card">
+          <div class="project-label-row">
+            <span class="project-year">2025 · In progress</span>
+            <span class="project-status">Computational physics · ML</span>
+          </div>
+          <h3 class="project-title">Neural Approximations of Solar System Dynamics</h3>
+          <p class="project-subtitle">
+            Orbital mechanics simulation with neural networks trained to emulate
+            multi-body gravitational trajectories.
+          </p>
+          <p class="project-body">
+            This project aims to build an accurate N-body simulation of the solar
+            system and then train neural networks to approximate orbital
+            trajectories from initial conditions. The long-term goal is to compare
+            learned dynamics to classical numerical integrators in terms of
+            stability, accuracy, and computational cost.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">N-body simulation</span>
+            <span class="project-tag">Neural networks</span>
+            <span class="project-tag">Scientific ML</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/avrybrdly93/nn-solar-system-sim"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link secondary"
+            >
+              Repository (work in progress)
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label-row">
+            <span class="project-year">2024–2025 · In progress</span>
+            <span class="project-status">Creative coding · Game dev</span>
+          </div>
+          <h3 class="project-title">Hoi An–Inspired 2D RPG Prototype</h3>
+          <p class="project-subtitle">
+            A stylized 2D RPG environment inspired by Hoi An, Vietnam, combining
+            custom art, parallax backgrounds, and gameplay systems.
+          </p>
+          <p class="project-body">
+            This prototype showcases a hand-crafted visual style and basic game
+            mechanics built in Unity. It reflects my interest in combining
+            simulation, visual design, and interaction—skills that also inform my
+            approach to scientific visualization and educational tools.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Unity</span>
+            <span class="project-tag">C#</span>
+            <span class="project-tag">2D game dev</span>
+            <span class="project-tag">Art & design</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/avrybrdly93/hoi-an-2d-rpg"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link secondary"
+            >
+              Repository (prototype)
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-heading">
+        <h2>About & Academic Focus</h2>
+        <p>
+          I’m especially interested in how careful mathematical modelling and
+          modern machine learning can work together—rather than in isolation—to
+          solve real physical problems.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I completed my B.S. in Mathematics (with a Physics minor) and have
+            since focused on projects that sit at the intersection of numerical
+            analysis, scientific computing, and applied machine learning. My work
+            includes full-stack simulation projects—from deriving the governing
+            equations and implementing solvers in Python to validating against
+            experimental data and packaging results into clear visualizations.
+          </p>
+          <p>
+            My golf ball aerodynamics project,
+            <span class="about-highlight">
+              “Ball in Flight: The Aerodynamic Effects of Dimples on a Golf Ball,”
+            </span>
+            is a central piece of my portfolio. It demonstrates my ability to
+            implement and validate a physically realistic model, perform
+            sensitivity analyses, and communicate results in a formal research
+            paper.
+          </p>
+          <p>
+            I am now extending this skill set toward scientific machine learning:
+            physics-informed neural networks for PDEs, neural approximations of
+            dynamical systems, and web-based tools that make these models more
+            accessible to others. Alongside my technical work, I have extensive
+            experience teaching mathematics and English, which has cultivated a
+            strong interest in clear explanation and pedagogy.
+          </p>
         </div>
-        <div class="gallerydiv">
-          <a
-            class="picturelink"
-            href="https://better-health.herokuapp.com/"
-            target="_blank"
-          >
-            <img class="galleryimg" src="assets/img/better-health.jpeg" />
-            <div class="project-title">
-              <h6>Better Health</h6>
-              <a
-                class="source-code"
-                href="https://github.com/avrybrdly93/Better-Health"
-                target="_blank"
-                ><em>Source Code</em></a
-              >
+
+        <aside class="timeline">
+          <div class="timeline-title">Recent trajectory</div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div>
+              <div class="timeline-body-title">Scientific computing & ML focus</div>
+              <div class="timeline-body-sub">2024–2025</div>
+              <div class="timeline-body-desc">
+                Developing PINN-based solvers, solar system simulations, and
+                interactive visualization tools while preparing for graduate study
+                in scientific computing and ML.
+              </div>
             </div>
-          </a>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div>
+              <div class="timeline-body-title">Golf ball aerodynamics project</div>
+              <div class="timeline-body-sub">2023–2024</div>
+              <div class="timeline-body-desc">
+                Designed and implemented a full aerodynamic flight simulator,
+                calibrated and validated via launch monitor data and literature,
+                and published results in a formal paper.
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div>
+              <div class="timeline-body-title">Teaching & mentoring</div>
+              <div class="timeline-body-sub">Ongoing</div>
+              <div class="timeline-body-desc">
+                Experience teaching mathematics and English, tutoring high school
+                and undergraduate students, and designing learning materials—all
+                of which shape how I design and communicate technical work.
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div>
+              <div class="timeline-body-title">Global perspective</div>
+              <div class="timeline-body-sub">Current · Vietnam & beyond</div>
+              <div class="timeline-body-desc">
+                Living and working abroad, with plans to continue slow travel
+                through Asia before beginning graduate study. This global context
+                informs both my teaching and my collaborative work.
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-card">
+        <div>
+          <h2>Let’s talk about simulations, PDEs, and scientific ML.</h2>
+          <p>
+            I’m currently preparing for graduate study and am always open to
+            conversations about research, collaboration, and opportunities at the
+            interface of mathematics, computation, and machine learning.
+          </p>
         </div>
-        <div class="left gallerydiv">
-          <a
-            class="picturelink"
-            href="https://onion-scraper-cheerio.herokuapp.com/"
-            target="_blank"
-          >
-            <img class="galleryimg" src="assets/img/Onion.jpg" />
-            <div class="project-title">
-              <h6>Onion News Scraper</h6>
-              <a
-                class="source-code"
-                href="http://github.com/avrybrdly93/scraper"
-                target="_blank"
-                ><em>Source Code</em></a
-              >
-            </div>
-          </a>
+        <div class="contact-links">
+          <div>
+            <div class="contact-link-label">Email</div>
+            <a href="mailto:avrybrdly@gmail.com" class="contact-link">
+              <span>avrybrdly@gmail.com</span>
+            </a>
+          </div>
+
+          <div>
+            <div class="contact-link-label">GitHub</div>
+            <a
+              href="https://github.com/avrybrdly93"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link"
+            >
+              <span>github.com/avrybrdly93</span>
+            </a>
+          </div>
+
+          <div>
+            <div class="contact-link-label">LinkedIn</div>
+            <a
+              href="linkedin.com/avrybrdly93"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link"
+            >
+              <span>LinkedIn profile</span>
+            </a>
+          </div>
+
+          <div>
+            <div class="contact-link-label">CV / Resume</div>
+            <a
+              href="Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link"
+            >
+              <span>Download CV (PDF)</span>
+            </a>
+          </div>
         </div>
-        <!-- <div class="gallerydiv">
-          <a
-            class="picturelink"
-            href="https://avrybrdly93.github.io/irish-skirmishes/"
-            target="_blank"
-          >
-            <img class="galleryimg" src="assets/img/irish-skirmishes.jpg" />
-            <div class="project-title">
-              <h6>Irish Skirmishes</h6>
-              <a
-                class="source-code"
-                href="http://github.com/avrybrdly93/irish-skirmishes"
-                target="_blank"
-                ><em>Source Code</em></a
-              >
-            </div>
-          </a>
-        </div>
-        <div class="left gallerydiv">
-          <a
-            class="picturelink"
-            href="http://thebradleyacres.com"
-            target="_blank"
-          >
-            <img class="galleryimg" src="assets/img/chickens.jpeg" />
-            <div class="project-title">
-              <h6>Bradley Acres</h6>
-              <a
-                class="source-code"
-                href="http://thebradleyacres.com"
-                target="_blank"
-                ><em>Source Code</em></a
-              >
-            </div>
-          </a>
-        </div> -->
-        <div class="gallerydiv">
-          <a class="picturelink" href="http://gridwaffles.com" target="_blank">
-            <img class="galleryimg" src="assets/img/Waffles.jpg" />
-            <div class="project-title">
-              <h6>Grid Waffles</h6>
-              <a
-                class="source-code"
-                href="http://github.com/avrybrdly93/GridWafflesDevelopment"
-                target="_blank"
-                ><em>Source Code</em></a
-              >
-            </div>
-          </a>
-        </div>
-      </section>
-    </div>
-    <!-- </section> -->
-    <!-- </div> -->
-    <footer>Avery Bradley Full-Stack Web Developer</footer>
-  </body>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Christopher Avery Bradley</span>
+      <span>Last updated: 2025</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear().toString();
+  </script>
+</body>
 </html>
