@@ -798,10 +798,6 @@
         </p>
 
         <div class="hero-meta">
-          <div class="pill pill-accent">
-            <span class="pill-dot"></span>
-            Currently based in Vietnam · US citizen
-          </div>
           <div class="pill">
             Research interests: PDEs, scientific ML, computational physics
           </div>
@@ -840,7 +836,6 @@
                 Scientific computing · ML · education
               </div>
             </div>
-            <div class="hero-card-badge">2024–2025</div>
           </div>
 
           <div class="hero-card-metrics">
@@ -886,7 +881,7 @@
       <div class="section-heading">
         <h2>Selected Projects</h2>
         <p>
-          A snapshot of the work I’m most proud of—combining theory, code, and
+          A snapshot of the work I’m most proud of: combining theory, code, and
           visualization to understand complex physical systems.
         </p>
       </div>
@@ -894,7 +889,55 @@
       <div class="projects-grid">
         <article class="project-card featured">
           <div class="project-label-row">
-            <span class="project-year">2025 · In preparation</span>
+            <span class="project-status">Research Project</span>
+          </div>
+          <h3 class="project-title">Ball in Flight: The Aerodynamic Effects of Dimples on a Golf Ball</h3>
+          <p class="project-subtitle">
+            High-fidelity simulation of dimpled vs smooth golf balls, including
+            aerodynamic coefficient fitting, validation, and trajectory analysis.
+          </p>
+          <p class="project-body">
+            This independent research project models golf ball flight using
+            spin-dependent lift and drag, turbulent transition effects, and
+            literature-based CL/CD fits. The simulator is validated against indoor
+            launch monitor data and existing experimental studies, and is
+            accompanied by a full paper and reproducible figures.
+          </p>
+          <ul class="project-list">
+            <li>Implements 3D ball flight with drag, lift, and spin decay.</li>
+            <li>Calibrates aerodynamic coefficients using experimental data and literature.</li>
+            <li>Compares dimpled vs smooth balls in terms of carry, peak height, and energy loss.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Numerical ODE integration</span>
+            <span class="project-tag">Aerodynamics</span>
+            <span class="project-tag">Data fitting</span>
+            <span class="project-tag">Matplotlib</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/avrybrdly93/golfsim"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              View on GitHub →
+            </a>
+            <a
+              href="https://zenodo.org/records/17499904"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link secondary"
+            >
+              Read the paper (Zenodo)
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label-row">
+            <span class="project-year">In preparation</span>
             <span class="project-status">Flagship ML / PDE project</span>
           </div>
           <h3 class="project-title">Physics-Informed Neural Networks for the 2D Wave Equation</h3>
@@ -942,57 +985,10 @@
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-label-row">
-            <span class="project-year">2024–2025</span>
-            <span class="project-status">Research project · Published</span>
-          </div>
-          <h3 class="project-title">Ball in Flight: The Aerodynamic Effects of Dimples on a Golf Ball</h3>
-          <p class="project-subtitle">
-            High-fidelity simulation of dimpled vs smooth golf balls, including
-            aerodynamic coefficient fitting, validation, and trajectory analysis.
-          </p>
-          <p class="project-body">
-            This independent research project models golf ball flight using
-            spin-dependent lift and drag, turbulent transition effects, and
-            literature-based CL/CD fits. The simulator is validated against indoor
-            launch monitor data and existing experimental studies, and is
-            accompanied by a full paper and reproducible figures.
-          </p>
-          <ul class="project-list">
-            <li>Implements 3D ball flight with drag, lift, and spin decay.</li>
-            <li>Calibrates aerodynamic coefficients using experimental data and literature.</li>
-            <li>Compares dimpled vs smooth balls in terms of carry, peak height, and energy loss.</li>
-          </ul>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Numerical ODE integration</span>
-            <span class="project-tag">Aerodynamics</span>
-            <span class="project-tag">Data fitting</span>
-            <span class="project-tag">Matplotlib</span>
-          </div>
-          <div class="project-links">
-            <a
-              href="https://github.com/avrybrdly93/golfsim"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-            >
-              View on GitHub →
-            </a>
-            <a
-              href="https://zenodo.org/records/17499904"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link secondary"
-            >
-              Read the paper (Zenodo)
-            </a>
-          </div>
-        </article>
+
       </div>
 
-      <div class="projects-grid" style="margin-top: 1.25rem;">
+   <!-- <div class="projects-grid" style="margin-top: 1.25rem;">
         <article class="project-card">
           <div class="project-label-row">
             <span class="project-year">2025 · In progress</span>
@@ -1030,7 +1026,7 @@
 
         <article class="project-card">
           <div class="project-label-row">
-            <span class="project-year">2024–2025 · In progress</span>
+            <span class="project-year">2025 · In progress</span>
             <span class="project-status">Creative coding · Game dev</span>
           </div>
           <h3 class="project-title">Hoi An–Inspired 2D RPG Prototype</h3>
@@ -1061,7 +1057,7 @@
             </a>
           </div>
         </article>
-      </div>
+      </div>-->  
     </section>
 
     <section id="about">
@@ -1069,7 +1065,7 @@
         <h2>About & Academic Focus</h2>
         <p>
           I’m especially interested in how careful mathematical modelling and
-          modern machine learning can work together—rather than in isolation—to
+          modern machine learning can work together, rather than in isolation, to
           solve real physical problems.
         </p>
       </div>
@@ -1079,10 +1075,10 @@
           <p>
             I completed my B.S. in Mathematics (with a Physics minor) and have
             since focused on projects that sit at the intersection of numerical
-            analysis, scientific computing, and applied machine learning. My work
-            includes full-stack simulation projects—from deriving the governing
-            equations and implementing solvers in Python to validating against
-            experimental data and packaging results into clear visualizations.
+            analysis, scientific computing, and applied machine learning. From 
+            deriving the governing equations and implementing solvers in Python to 
+            validating against  experimental data and packaging results into clear 
+            visualizations, my work includes full-stack simulation projects.
           </p>
           <p>
             My golf ball aerodynamics project,
@@ -1111,7 +1107,7 @@
             <div class="timeline-marker"></div>
             <div>
               <div class="timeline-body-title">Scientific computing & ML focus</div>
-              <div class="timeline-body-sub">2024–2025</div>
+              <div class="timeline-body-sub">2025</div>
               <div class="timeline-body-desc">
                 Developing PINN-based solvers, solar system simulations, and
                 interactive visualization tools while preparing for graduate study
@@ -1124,7 +1120,7 @@
             <div class="timeline-marker"></div>
             <div>
               <div class="timeline-body-title">Golf ball aerodynamics project</div>
-              <div class="timeline-body-sub">2023–2024</div>
+              <div class="timeline-body-sub">2025</div>
               <div class="timeline-body-desc">
                 Designed and implemented a full aerodynamic flight simulator,
                 calibrated and validated via launch monitor data and literature,
@@ -1139,8 +1135,8 @@
               <div class="timeline-body-title">Teaching & mentoring</div>
               <div class="timeline-body-sub">Ongoing</div>
               <div class="timeline-body-desc">
-                Experience teaching mathematics and English, tutoring high school
-                and undergraduate students, and designing learning materials—all
+                Experience teaching Mathematics and English, tutoring high school
+                and undergraduate students, and designing learning materials, all
                 of which shape how I design and communicate technical work.
               </div>
             </div>
@@ -1220,8 +1216,7 @@
     </section>
 
     <footer>
-      <span>© <span id="year"></span> Christopher Avery Bradley</span>
-      <span>Last updated: 2025</span>
+      <span><span id="year"></span> Christopher Avery Bradley</span>
     </footer>
   </main>
 
